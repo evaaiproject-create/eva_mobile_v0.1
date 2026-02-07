@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+STRINGS.XML - TEXT RESOURCES
+================================================================================
+
+PURPOSE:
+    All user-visible text in the app is defined here.
+
+WHY USE STRING RESOURCES?
+    1. Easy translation - just create strings.xml for each language
+    2. Consistency - same text used everywhere
+    3. Easy updates - change text in one place
+
+NAMING CONVENTION:
+    - screen_element_description
+    - Example: login_button_sign_in, chat_input_hint
+
+================================================================================
+-->
+<resources>
+    <!-- App name - shown in launcher and app bar -->
+    <string name="app_name">Eva</string>
+
+    <!-- Version information -->
+    <string name="app_version">v0.1</string>
+
+    <!--
+    ================================================================================
+    SPLASH SCREEN
+    ================================================================================
+    -->
+    <string name="splash_tagline">Your Personal AI Assistant</string>
+    <string name="splash_loading">Initializing…</string>
+
+    <!--
+    ================================================================================
+    LOGIN SCREEN
+    ================================================================================
+    -->
+    <string name="login_welcome">Welcome to Eva</string>
+    <string name="login_subtitle">Sign in to continue</string>
+    <string name="login_button_google">Sign in with Google</string>
+    <string name="login_error_failed">Sign in failed. Please try again.</string>
+    <string name="login_error_network">Network error. Check your connection.</string>
+
+    <!--
+    ================================================================================
+    CHAT SCREEN
+    ================================================================================
+    -->
+    <string name="chat_title">Eva</string>
+    <string name="chat_subtitle">AI Assistant</string>
+    <string name="chat_input_hint">Message Eva…</string>
+    <string name="chat_send_button">Send</string>
+    <string name="chat_call_button">Start voice call</string>
+    <string name="chat_typing">Eva is typing…</string>
+    <string name="chat_error_send">Failed to send message</string>
+    <string name="chat_welcome_message">Hello! I\'m Eva, your personal AI assistant. How can I help you today?</string>
+
+    <!--
+    ================================================================================
+    LIVE CALL SCREEN
+    ================================================================================
+    -->
+    <string name="call_title">Eva Live</string>
+    <string name="call_connecting">Connecting…</string>
+    <string name="call_connected">Connected</string>
+    <string name="call_end_button">End Call</string>
+    <string name="call_mute_button">Mute</string>
+    <string name="call_speaker_button">Speaker</string>
+
+    <!--
+    ================================================================================
+    NAVIGATION DRAWER
+    ================================================================================
+    -->
+    <string name="nav_new_chat">New Chat</string>
+    <string name="nav_previous_chats">Previous Chats</string>
+    <string name="nav_template_1">Template 1</string>
+    <string name="nav_template_2">Template 2</string>
+    <string name="nav_template_3">Template 3</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logout">Logout</string>
+    <string name="nav_open">Open navigation drawer</string>
+    <string name="nav_close">Close navigation drawer</string>
+
+    <!--
+    ================================================================================
+    TEMPLATE SCREENS
+    ================================================================================
+    -->
+    <string name="template_placeholder">Template for later features</string>
+    <string name="template_1_title">Template 1</string>
+    <string name="template_2_title">Template 2</string>
+    <string name="template_3_title">Template 3</string>
+
+    <!--
+    ================================================================================
+    SETTINGS SCREEN
+    ================================================================================
+    -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_coming_soon">Settings coming soon</string>
+
+    <!--
+    ================================================================================
+    COMMON / SHARED
+    ================================================================================
+    -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_network">Network error</string>
+    <string name="button_retry">Retry</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_ok">OK</string>
+    <string name="loading">Loading…</string>
+
+    <!--
+    ================================================================================
+    CONTENT DESCRIPTIONS (for accessibility)
+    ================================================================================
+    -->
+    <string name="cd_app_logo">Eva logo</string>
+    <string name="cd_send_message">Send message</string>
+    <string name="cd_start_call">Start voice call</string>
+    <string name="cd_end_call">End call</string>
+    <string name="cd_menu">Open menu</string>
+    <string name="cd_back">Go back</string>
+    <string name="cd_user_avatar">User profile picture</string>
+</resources>

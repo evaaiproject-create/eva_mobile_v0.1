@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+ANDROID MANIFEST
+================================================================================
+
+PURPOSE:
+    This file declares essential information about your app to the Android system.
+    It's like an ID card for your app that tells Android:
+    - What permissions the app needs
+    - What components (activities, services) the app has
+    - What hardware/software features are required
+
+SECTIONS:
+    1. Package declaration
+    2. Permissions
+    3. Application configuration
+    4. Activity declarations
+
+================================================================================
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+    ================================================================================
+    PERMISSIONS
+    ================================================================================
+    These declare what your app needs access to.
+    Users may be prompted to grant these permissions.
+    ================================================================================
+    -->
+
+    <!-- INTERNET: Required to communicate with Cloud Run backend -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- NETWORK STATE: Check if device is online before making requests -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- RECORD AUDIO: Required for voice calls with EVA -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- VIBRATE: For haptic feedback on messages -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--
+    ================================================================================
+    APPLICATION
+    ================================================================================
+    Configures the application itself.
+    ================================================================================
+    -->
+    <application
+        android:name=".EvaApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Eva"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="31">
+
+        <!--
+        ================================================================================
+        MAIN ACTIVITY
+        ================================================================================
+        The single Activity that hosts all Fragments.
+        This follows the "Single Activity" architecture pattern.
+        ================================================================================
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Eva"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- This makes it the launcher activity (app icon taps open this) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

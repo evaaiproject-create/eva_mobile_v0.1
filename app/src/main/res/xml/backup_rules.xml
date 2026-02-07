@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+BACKUP RULES
+================================================================================
+
+PURPOSE:
+    Configures what data is included in Android Auto Backup.
+    Auto Backup saves app data to the user's Google Drive.
+
+SECURITY:
+    We exclude authentication tokens to prevent security issues
+    if backup is restored on a different device.
+
+================================================================================
+-->
+<full-backup-content>
+    <!-- Include user preferences -->
+    <include domain="sharedpref" path="."/>
+
+    <!-- Exclude sensitive authentication data -->
+    <exclude domain="sharedpref" path="auth_prefs.xml"/>
+
+    <!-- Exclude cached data (will be re-downloaded) -->
+    <exclude domain="cache" path="."/>
+</full-backup-content>

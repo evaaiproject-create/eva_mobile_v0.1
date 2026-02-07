@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Eva" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary -->
+        <item name="colorPrimary">@color/eva_primary</item>
+        <item name="colorPrimaryContainer">@color/eva_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/eva_secondary</item>
+        <item name="colorSecondaryContainer">@color/eva_secondary_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/eva_background</item>
+        <item name="colorSurface">@color/eva_surface</item>
+        <item name="colorSurfaceVariant">@color/eva_surface_elevated</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/eva_error</item>
+        <item name="colorOnError">@color/white</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/eva_background</item>
+        <item name="android:navigationBarColor">@color/eva_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

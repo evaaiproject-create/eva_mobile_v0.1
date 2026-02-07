@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="eva_primary">#3B82F6</color>
+    <color name="eva_primary_dark">#2563EB</color>
+    <color name="eva_primary_light">#60A5FA</color>
+    <color name="eva_secondary">#8B5CF6</color>
+    <color name="eva_secondary_dark">#7C3AED</color>
+    <color name="eva_secondary_light">#A78BFA</color>
+
+    <!-- Background Colors -->
+    <color name="eva_background">#111827</color>
+    <color name="eva_surface">#1F2937</color>
+    <color name="eva_surface_elevated">#374151</color>
+
+    <!-- Text Colors -->
+    <color name="eva_text_primary">#FFFFFF</color>
+    <color name="eva_text_secondary">#9CA3AF</color>
+    <color name="eva_text_disabled">#6B7280</color>
+
+    <!-- Semantic Colors -->
+    <color name="eva_success">#10B981</color>
+    <color name="eva_error">#EF4444</color>
+    <color name="eva_warning">#F59E0B</color>
+
+    <!-- Chat Colors -->
+    <color name="chat_bubble_user">#3B82F6</color>
+    <color name="chat_bubble_eva">#1F2937</color>
+
+    <!-- System Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
