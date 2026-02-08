@@ -16,25 +16,6 @@ PURPOSE:
     This interface defines all the API endpoints that the app can call.
     Retrofit uses this interface to generate the actual HTTP client code.
 
-HOW RETROFIT WORKS:
-    1. You define an interface with annotated methods
-    2. Retrofit generates the implementation at runtime
-    3. You call methods like normal Kotlin functions
-    4. Retrofit converts them to HTTP requests
-
-ANNOTATIONS:
-    @GET, @POST, @PUT, @DELETE - HTTP method
-    @Path - URL path parameter
-    @Query - URL query parameter
-    @Body - Request body (JSON)
-    @Header - HTTP header
-
-EXAMPLE:
-    @GET("users/{id}")
-    suspend fun getUser(@Path("id") userId: String): Response<User>
-
-    This becomes: GET https://api.example.com/users/123
-
 ================================================================================
 */
 
@@ -48,54 +29,27 @@ interface EvaApiService {
 
     /**
      * Register a new user with Google OAuth.
-     *
-     * ENDPOINT: POST /auth/register
-     *
-     * WHEN TO USE:
-     *     First time a user signs in with Google.
-     *     If user already exists, backend returns 409 Conflict.
-     *
-     * PARAMETERS:
-     *     request - Contains Google ID token and optional device ID
-     *
-     * RETURNS:
-     *     TokenResponse with access_token and user info
+     * ENDPOINT: POST /api/auth/register
      */
-    @POST("auth/register")
+    @POST("api/auth/register")
     suspend fun register(
         @Body request: LoginRequest
     ): Response<TokenResponse>
 
     /**
      * Login an existing user.
-     *
-     * ENDPOINT: POST /auth/login
-     *
-     * WHEN TO USE:
-     *     User has signed in before (already registered).
-     *     If user doesn't exist, backend returns 404 Not Found.
-     *
-     * PARAMETERS:
-     *     request - Contains Google ID token and optional device ID
-     *
-     * RETURNS:
-     *     TokenResponse with access_token and user info
+     * ENDPOINT: POST /api/auth/login
      */
-    @POST("auth/login")
+    @POST("api/auth/login")
     suspend fun login(
         @Body request: LoginRequest
     ): Response<TokenResponse>
 
     /**
      * Verify if a token is valid.
-     *
-     * ENDPOINT: GET /auth/verify
-     *
-     * WHEN TO USE:
-     *     Check if stored token is still valid before making requests.
-     *     Optional - can just handle 401 errors instead.
+     * ENDPOINT: GET /api/auth/verify
      */
-    @GET("auth/verify")
+    @GET("api/auth/verify")
     suspend fun verifyToken(
         @Query("token") token: String
     ): Response<Map<String, Boolean>>
@@ -108,25 +62,9 @@ interface EvaApiService {
 
     /**
      * Send a message to EVA and get a response.
-     *
-     * ENDPOINT: POST /chat/send
-     *
-     * THIS IS THE MAIN CHAT METHOD.
-     *
-     * FLOW:
-     *     1. User types message
-     *     2. App calls this endpoint
-     *     3. Backend saves message, sends to Gemini, saves response
-     *     4. App receives EVA's response
-     *
-     * PARAMETERS:
-     *     authorization - "Bearer {access_token}"
-     *     request - Message text and optional conversation ID
-     *
-     * RETURNS:
-     *     ChatMessageResponse with EVA's response
+     * ENDPOINT: POST /api/chat/send
      */
-    @POST("chat/send")
+    @POST("api/chat/send")
     suspend fun sendMessage(
         @Header("Authorization") authorization: String,
         @Body request: ChatMessageRequest
@@ -134,21 +72,9 @@ interface EvaApiService {
 
     /**
      * Get chat history for a conversation.
-     *
-     * ENDPOINT: GET /chat/history/{conversation_id}
-     *
-     * WHEN TO USE:
-     *     Loading a conversation to display previous messages.
-     *
-     * PARAMETERS:
-     *     authorization - "Bearer {access_token}"
-     *     conversationId - Which conversation to get
-     *     limit - Max messages to return (default 50)
-     *
-     * RETURNS:
-     *     List of ChatMessage objects
+     * ENDPOINT: GET /api/chat/history/{conversation_id}
      */
-    @GET("chat/history/{conversation_id}")
+    @GET("api/chat/history/{conversation_id}")
     suspend fun getChatHistory(
         @Header("Authorization") authorization: String,
         @Path("conversation_id") conversationId: String,
@@ -157,20 +83,9 @@ interface EvaApiService {
 
     /**
      * Start a new conversation.
-     *
-     * ENDPOINT: POST /chat/new
-     *
-     * WHEN TO USE:
-     *     User taps "New Chat" in the navigation drawer.
-     *
-     * PARAMETERS:
-     *     authorization - "Bearer {access_token}"
-     *     request - Optional custom title
-     *
-     * RETURNS:
-     *     NewConversationResponse with new conversation ID
+     * ENDPOINT: POST /api/chat/new
      */
-    @POST("chat/new")
+    @POST("api/chat/new")
     suspend fun newConversation(
         @Header("Authorization") authorization: String,
         @Body request: NewConversationRequest? = null
@@ -178,30 +93,18 @@ interface EvaApiService {
 
     /**
      * Get all conversations for the current user.
-     *
-     * ENDPOINT: GET /chat/conversations
-     *
-     * WHEN TO USE:
-     *     Populating the conversation list in navigation drawer.
-     *
-     * RETURNS:
-     *     List of ConversationInfo objects
+     * ENDPOINT: GET /api/chat/conversations
      */
-    @GET("chat/conversations")
+    @GET("api/chat/conversations")
     suspend fun getConversations(
         @Header("Authorization") authorization: String
     ): Response<List<ConversationInfo>>
 
     /**
      * Delete a conversation.
-     *
-     * ENDPOINT: DELETE /chat/{conversation_id}
-     *
-     * WHEN TO USE:
-     *     User wants to delete a conversation.
-     *     This is permanent!
+     * ENDPOINT: DELETE /api/chat/{conversation_id}
      */
-    @DELETE("chat/{conversation_id}")
+    @DELETE("api/chat/{conversation_id}")
     suspend fun deleteConversation(
         @Header("Authorization") authorization: String,
         @Path("conversation_id") conversationId: String
@@ -215,10 +118,9 @@ interface EvaApiService {
 
     /**
      * Get current user's profile.
-     *
-     * ENDPOINT: GET /users/me
+     * ENDPOINT: GET /api/users/me
      */
-    @GET("users/me")
+    @GET("api/users/me")
     suspend fun getCurrentUser(
         @Header("Authorization") authorization: String
     ): Response<User>
@@ -231,12 +133,8 @@ interface EvaApiService {
 
     /**
      * Health check endpoint.
-     *
-     * ENDPOINT: GET /health
-     *
-     * WHEN TO USE:
-     *     Check if backend is reachable before showing errors.
+     * ENDPOINT: GET /api/health
      */
-    @GET("health")
+    @GET("api/health")
     suspend fun healthCheck(): Response<Map<String, Any>>
 }

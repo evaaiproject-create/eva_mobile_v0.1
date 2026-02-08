@@ -3,11 +3,14 @@ package com.example.eva.app.data.repository
 import android.content.Context
 import android.provider.Settings
 import com.example.eva.app.data.api.RetrofitClient
+import com.example.eva.app.data.models.ErrorResponse
 import com.example.eva.app.data.models.LoginRequest
 import com.example.eva.app.data.models.TokenResponse
 import com.example.eva.app.utils.SessionManager
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import retrofit2.Response
 
 /*
 ================================================================================
@@ -121,15 +124,15 @@ class AuthRepository(private val context: Context) {
                             Result.success(tokenResponse)
                         } else {
                             Result.failure(
-                                Exception("Registration failed: ${registerResponse.code()}")
+                                Exception(parseErrorMessage(registerResponse, "Registration failed"))
                             )
                         }
                     }
 
-                    // Other error
+                    // Other error (including 403 Forbidden)
                     else -> {
                         Result.failure(
-                            Exception("Login failed: ${loginResponse.code()}")
+                            Exception(parseErrorMessage(loginResponse, "Login failed"))
                         )
                     }
                 }
@@ -209,5 +212,22 @@ class AuthRepository(private val context: Context) {
             displayName = tokenResponse.user.displayName ?: "User",
             pictureUrl = null // Google picture URL not included in our response
         )
+    }
+
+    /**
+     * Parse error message from API response.
+     */
+    private fun parseErrorMessage(response: Response<*>, defaultPrefix: String): String {
+        return try {
+            val errorBody = response.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, ErrorResponse::class.java)
+            if (errorResponse?.detail != null) {
+                "$defaultPrefix: ${errorResponse.detail}"
+            } else {
+                "$defaultPrefix: ${response.code()}"
+            }
+        } catch (e: Exception) {
+            "$defaultPrefix: ${response.code()}"
+        }
     }
 }
