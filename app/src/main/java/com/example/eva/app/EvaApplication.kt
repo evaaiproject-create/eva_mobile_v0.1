@@ -26,7 +26,7 @@ CURRENT USAGE:
 
 NOTE:
     This class is referenced in AndroidManifest.xml:
-    android:name=".EvaApplication"
+    android:name=".app.EvaApplication"
 
 ================================================================================
 */

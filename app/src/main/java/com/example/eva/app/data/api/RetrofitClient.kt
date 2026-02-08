@@ -1,6 +1,6 @@
-package com.eva.app.data.api
+package com.example.eva.app.data.api
 
-import com.eva.app.utils.Constants
+import com.example.eva.app.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -23,7 +23,7 @@ import com.example.eva.ui.theme.login.LoginScreen
 import com.example.eva.ui.theme.navigation.NavigationDrawerContent
 import com.example.eva.ui.theme.spash.SplashScreen
 import com.example.eva.ui.theme.templates.TemplateScreen
-import com.example.eva.ui.theme.theme.EvaTheme
+import com.example.eva.ui.theme.EvaTheme
 import com.example.eva.app.utils.Constants
 import kotlinx.coroutines.launch
 

@@ -1,15 +1,16 @@
-package com.eva.app.ui.chat
+package com.example.eva.ui.theme.chat
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.eva.app.data.models.ChatUiState
-import com.eva.app.data.models.MessageStatus
-import com.eva.app.data.models.UiChatMessage
-import com.eva.app.data.repository.ChatRepository
+import com.example.eva.app.data.models.ChatUiState
+import com.example.eva.app.data.models.MessageStatus
+import com.example.eva.app.data.models.UiChatMessage
+import com.example.eva.app.data.repository.ChatRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.time.Instant
 import java.util.UUID
 
 /*
@@ -300,7 +301,7 @@ class ChatViewModel(
      */
     private fun parseTimestamp(timestamp: String): Long {
         return try {
-            java.time.Instant.parse(timestamp).toEpochMilli()
+            Instant.parse(timestamp).toEpochMilli()
         } catch (e: Exception) {
             System.currentTimeMillis()
         }

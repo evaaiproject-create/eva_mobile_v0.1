@@ -1,4 +1,4 @@
-package com.eva.app.ui.splash
+package com.example.eva.ui.theme.spash
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -29,9 +29,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.eva.app.R
-import com.eva.app.data.repository.AuthRepository
-import com.eva.app.utils.Constants
+import com.example.eva.R
+import com.example.eva.app.data.repository.AuthRepository
+import com.example.eva.app.utils.Constants
 import kotlinx.coroutines.delay
 
 /*

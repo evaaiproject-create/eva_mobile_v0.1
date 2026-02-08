@@ -1,4 +1,4 @@
-package com.eva.app.ui.theme
+package com.example.eva.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

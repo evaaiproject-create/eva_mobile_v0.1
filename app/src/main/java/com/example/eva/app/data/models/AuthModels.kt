@@ -1,4 +1,4 @@
-package com.eva.app.data.models
+package com.example.eva.app.data.models
 
 import com.google.gson.annotations.SerializedName
 

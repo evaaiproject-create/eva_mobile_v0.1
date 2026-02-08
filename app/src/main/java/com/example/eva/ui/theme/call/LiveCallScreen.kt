@@ -1,4 +1,4 @@
-package com.eva.app.ui.call
+package com.example.eva.ui.theme.call
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -38,7 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.eva.app.R
+import com.example.eva.R
 import kotlinx.coroutines.delay
 
 /*

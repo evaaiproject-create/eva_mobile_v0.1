@@ -1,4 +1,4 @@
-package com.eva.app.ui.chat
+package com.example.eva.ui.theme.chat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,12 +52,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.eva.app.R
-import com.eva.app.data.models.ChatUiState
-import com.eva.app.data.models.MessageStatus
-import com.eva.app.data.models.UiChatMessage
-import com.eva.app.data.repository.AuthRepository
-import com.eva.app.data.repository.ChatRepository
+import com.example.eva.R
+import com.example.eva.app.data.models.MessageStatus
+import com.example.eva.app.data.models.UiChatMessage
+import com.example.eva.app.data.repository.AuthRepository
+import com.example.eva.app.data.repository.ChatRepository
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

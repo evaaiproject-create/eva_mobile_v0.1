@@ -1,11 +1,11 @@
-package com.eva.app.data.repository
+package com.example.eva.app.data.repository
 
 import android.content.Context
 import android.provider.Settings
-import com.eva.app.data.api.RetrofitClient
-import com.eva.app.data.models.LoginRequest
-import com.eva.app.data.models.TokenResponse
-import com.eva.app.utils.SessionManager
+import com.example.eva.app.data.api.RetrofitClient
+import com.example.eva.app.data.models.LoginRequest
+import com.example.eva.app.data.models.TokenResponse
+import com.example.eva.app.utils.SessionManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

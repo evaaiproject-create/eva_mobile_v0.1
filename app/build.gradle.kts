@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eva.app"
+    namespace = "com.example.eva"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.eva.app"
+        applicationId = "com.example.eva"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -37,7 +37,7 @@ android {
         }
 
         debug {
-            applicationIdSuffix = ".debug"
+            // Removed applicationIdSuffix to prevent package name mismatch with Google Console
             isDebuggable = true
         }
     }
@@ -63,6 +63,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/DEPENDENCIES"
         }
     }
 }

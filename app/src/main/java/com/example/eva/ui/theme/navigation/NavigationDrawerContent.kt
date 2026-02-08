@@ -1,4 +1,4 @@
-package com.eva.app.ui.navigation
+package com.example.eva.ui.theme.navigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -19,14 +19,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Chat
-import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Folder
 import androidx.compose.material3.Divider
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalDrawerSheet
@@ -41,16 +39,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.eva.app.R
-import com.eva.app.data.models.ConversationInfo
-import com.eva.app.data.repository.AuthRepository
-import com.eva.app.data.repository.ChatRepository
-import com.eva.app.utils.Constants
+import com.example.eva.R
+import com.example.eva.app.data.models.ConversationInfo
+import com.example.eva.app.data.repository.AuthRepository
+import com.example.eva.app.data.repository.ChatRepository
+import com.example.eva.app.utils.Constants
 import kotlinx.coroutines.launch
 
 /*
@@ -144,7 +143,7 @@ fun NavigationDrawerContent(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
+            Divider(color = MaterialTheme.colorScheme.surfaceVariant)
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -217,7 +216,7 @@ fun NavigationDrawerContent(
             }
 
             // Bottom section
-            HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
+            Divider(color = MaterialTheme.colorScheme.surfaceVariant)
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -309,7 +308,7 @@ private fun DrawerItem(
     icon: ImageVector,
     label: String,
     onClick: () -> Unit,
-    tint: androidx.compose.ui.graphics.Color = MaterialTheme.colorScheme.onSurface
+    tint: Color = MaterialTheme.colorScheme.onSurface
 ) {
     Row(
         modifier = Modifier
