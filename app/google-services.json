@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "81503423918",
+    "project_id": "eva-backend-service",
+    "storage_bucket": "eva-backend-service.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81503423918:android:3918a0abaef7af0a9fcc3f",
+        "android_client_info": {
+          "package_name": "com.example.eva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81503423918-bpkh1qeg2g307eameanio97t6cv582vi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eva",
+            "certificate_hash": "3a7e9037d5a9df566322f014984c3a365a825015"
+          }
+        },
+        {
+          "client_id": "81503423918-nkn83onkuqk87081ln9hibjc0oba53p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyPJitxPdDIvn_XJdcCF68hAtdLAmTVM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81503423918-3sujbguhqjn6ns89hjb3858t92aksher.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

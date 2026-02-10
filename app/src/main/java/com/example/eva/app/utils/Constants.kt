@@ -21,7 +21,7 @@ object Constants {
      *
      * IMPORTANT: Must end with a trailing slash "/"
      */
-    const val BASE_URL = "https://ai-assist-81503423918.europe-west1.run.app/"
+    const val BASE_URL = "https://eva-backend-81503423918.europe-west1.run.app/"
 
     /**
      * API request timeout in seconds.
