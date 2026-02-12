@@ -8,6 +8,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -58,7 +59,6 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
     }
 
     packaging {
@@ -103,10 +103,13 @@ dependencies {
 
     // ===== DATA STORAGE =====
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // ===== GOOGLE SERVICES =====
     implementation(platform("com.google.firebase:firebase-bom:34.9.0"))
     implementation("com.google.firebase:firebase-analytics:23.0.0")
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.google.play.services.auth)
 
 
     // ===== IMAGE LOADING =====

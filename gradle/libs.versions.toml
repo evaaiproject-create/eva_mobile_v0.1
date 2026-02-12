@@ -1,6 +1,6 @@
 [versions]
 agp = "8.2.2"
-kotlin = "1.9.22"
+kotlin = "2.0.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -11,6 +11,7 @@ composeBom = "2024.05.00"
 material = "1.11.0"
 firebaseAuthKtx = "23.2.1"
 firebaseFirestoreKtx = "25.1.4"
+googleAuth = "21.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,7 +24,11 @@ androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", versi
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+google-play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "googleAuth" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
